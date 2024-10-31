@@ -1,0 +1,54 @@
+.pinkbridge-dam-media-wrapper { display: flex; flex-wrap: wrap; height: 100%; }
+.pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper .has-child .open-tree { display: none; padding-top: 10px; padding-left: 30px; }
+.pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper .has-child .open-tree:before { position: absolute; left: 10px; width: 1px; height: 100%; background-color: #adadaf; content: " "; }
+.pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper .has-child li:before { position: absolute; left: -19px; content: " "; width: 8px; height: 1px; background-color: #adadaf; top: 20px; }
+.pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper .has-child ul { position: relative; }
+.pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper ul { position: relative; }
+.pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper { max-width: 250px; flex: 0 0 250px; border-right: 1px solid #adadaf; padding: 0 16px; background-color: #f4f4f4; }
+.pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper li { padding: 10px 0; margin-bottom: 0; cursor: pointer; position: relative;     /* color: #dcdcde; */ }
+.pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper li.has-child { padding-left: 0 }
+.pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper li.has-child > span { cursor: pointer; position: relative; }
+#dam_overlay { background-color: rgba(0, 0, 0, 0.3); position: absolute; left: 0; top: 0; height: 100%; width: 100%; z-index: 1000000; transition: all 0.3s; }
+#dam_overlay:after { position: absolute; height: 100px; width: 100px; content: ""; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 99999999; background-size: 100px 100px; display: block; background-image: url(../images/loader.svg); }
+.pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper li:after { position: absolute; left: 0; top: 9px; height: 20px; width: 20px; content: " "; background-size: 20px 20px; background-image: url(../images/folder-icon.svg); }
+.pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper li.has-child:after { display: none; }
+.pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper li.has-child span:after { background-image: url(../images/multifolder-icon.svg); position: absolute; left: 0px; top: -2px; height: 20px; width: 20px; content: " "; background-size: 20px 20px; }
+.pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper li.has-child span { padding-left: 30px; }
+
+/* .pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper li:after */
+.pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper li.has-child.active>span:after { background-image: url(../images/open-folder-icon.svg); }
+.pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper li:not(.has-child) { padding-left: 30px; }
+.pinkbridge-right-wrapper { padding: 16px; }
+.pinkbridge-right-wrapper:has(.pinkbridge-dam-media-content-error) { max-width: 100%; height: calc(100% - 32px); display: flex; align-items: center; justify-content: center; }
+.pinkbridge-right-wrapper .pinkbridge-dam-media-content-error { font-size: 16px; font-weight: 600; }
+.pinkbridge-dam-media-error { width: 100%; text-align: center; padding: 50px; font-size: 14px; font-weight: 600; text-transform: capitalize; }
+.pinkbridge-dam-media-wrapper .pinkbridge-dam-content-outer { position: relative; flex: 1; }
+.pinkbridge-dam-media-wrapper .pinkbridge-right-content-wrapper { display: flex; margin: 0 -8px; flex-wrap: wrap; }
+.pinkbridge-dam-media-wrapper .pinkbridge-right-content-wrapper .dam-media-right-bar { flex: 0 0 12.5%; max-width: 12.5%; padding: 8px; margin-bottom: 16px; }
+.pinkbridge-dam-media-wrapper .pinkbridge-right-content-wrapper .dam-media-right-bar:has(.ptc_dam_selected) { box-shadow: inset 0 0 0 3px #fff, inset 0 0 0 7px #2271b1; }
+.pinkbridge-dam-media-wrapper .pinkbridge-right-content-wrapper .dam-media-right-bar .dam-media-wrapper { padding-bottom: 100%; position: relative; }
+.pinkbridge-dam-media-wrapper .pinkbridge-right-content-wrapper .dam-media-right-bar img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.media-frame-content .pinkbridge-right-wrapper .dam-media-wrapper { cursor: pointer }
+@media(max-width:1024px) {
+    .pinkbridge-dam-media-wrapper .pinkbridge-right-content-wrapper .dam-media-right-bar { flex: 0 0 19.5%; max-width: 19.5%; }
+}
+@media(max-width:991px) {
+    .pinkbridge-dam-media-wrapper .pinkbridge-right-content-wrapper .dam-media-right-bar { flex: 0 0 21.7%; max-width: 21.7%; }
+}
+@media(max-width:767px) {
+    .pinkbridge-dam-media-wrapper .pinkbridge-right-content-wrapper .dam-media-right-bar { flex: 0 0 31.2%; max-width: 31.2%; }
+    .pinkbridge-dam-media-wrapper .pinkbridge-sidebar-wrapper { max-width: 180px; flex: 0 0 180px; }
+}
+@media(max-width:425px) {
+    .pinkbridge-dam-media-wrapper .pinkbridge-right-content-wrapper .dam-media-right-bar { flex: 0 0 120px; max-width: 120px; }
+}
+@media(max-width:375px) {
+    .pinkbridge-dam-media-wrapper .pinkbridge-right-content-wrapper .dam-media-right-bar { flex: 0 0 80px; max-width: 80px; }
+}
+@keyframes load {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(5rem); }
+}
+.form-loader { border: none; background-color: #2271b1; color: #fff; cursor: pointer; padding: 0 15px; font-size: 16px; font-weight: 500; transition: all 0.5s; text-align: center; line-height: 48px; position: relative; overflow: hidden; }
+.form-loader:before { content: " "; position: absolute; width: 400%; height: 100%; background: repeating-linear-gradient(45deg, #2973af, #2572b1 0.5rem, #fff 1rem); background: repeat linear-gradient(60deg, transperant, #2271b1 .75rem, #2271b1 1.25rem); left: -100%; top: 0; opacity: 0.2; right: 0; transition: all 0.5s; animation: load 5s infinite linear; }
+.pinkbridge-dam-media-wrapper .dam-media-right-bar .dam-file-name { text-align: center; color: #000; word-wrap: break-word; line-height: 1.5; }
